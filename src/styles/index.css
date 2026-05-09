@@ -1,0 +1,32 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.responsive-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.show-mobile {
+  display: none !important;
+}
+
+.hidden-mobile {
+  display: flex !important;
+}
+
+@media (max-width: 768px) {
+  .responsive-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hidden-mobile {
+    display: none !important;
+  }
+  .show-mobile {
+    display: block !important;
+  }
+}

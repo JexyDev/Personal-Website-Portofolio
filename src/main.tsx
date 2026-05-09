@@ -1,0 +1,11 @@
+import { createRoot } from "react-dom/client";
+import { RouterProvider } from "react-router";
+import { router } from "./app/routes.tsx";
+import { ThemeProvider } from "next-themes";
+import "./styles/index.css";
+
+createRoot(document.getElementById("root")!).render(
+  <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <RouterProvider router={router} />
+  </ThemeProvider>
+);
