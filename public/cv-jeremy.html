@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum Vitae - Jeremy Darrell Andreas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @page { size: A4; margin: 0; }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      color: #222;
+      background: #e8e8e8;
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* PRINT CONTROLS */
+    .print-bar {
+      text-align: center;
+      padding: 16px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    .print-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 28px;
+      background: #1e3a5f;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 8px;
+    }
+    .print-btn:hover { opacity: 0.85; }
+    .print-hint { font-size: 11px; color: #777; margin-top: 6px; }
+
+    @media print {
+      .print-bar { display: none; }
+      body { background: white; }
+      .cv-wrapper { box-shadow: none; }
+    }
+
+    /* CV WRAPPER */
+    .cv-wrapper {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 24px auto;
+      background: #fff;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.13);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ======= LEFT SIDEBAR ======= */
+    .cv-body {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 68mm;
+      background: #1e3a5f;
+      color: #fff;
+      padding: 28px 20px;
+      flex-shrink: 0;
+    }
+
+    /* Photo */
+    .photo-box {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: #fff2;
+      border: 3px solid rgba(255,255,255,0.35);
+      margin: 0 auto 14px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+    }
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sidebar-name {
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2px;
+    }
+    .sidebar-role {
+      font-size: 10px;
+      text-align: center;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 18px;
+      font-weight: 400;
+    }
+
+    .sidebar-section {
+      margin-bottom: 18px;
+    }
+    .sidebar-section-title {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.5);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+
+    .contact-item {
+      font-size: 10.5px;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .contact-label {
+      font-size: 9px;
+      color: rgba(255,255,255,0.45);
+      display: block;
+    }
+    .contact-icon {
+      font-size: 12px;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    .skill-item {
+      margin-bottom: 8px;
+    }
+    .skill-name {
+      font-size: 10.5px;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 3px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .skill-pct {
+      font-size: 9px;
+      color: rgba(255,255,255,0.5);
+    }
+    .skill-bar-bg {
+      height: 3px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 2px;
+    }
+    .skill-bar-fill {
+      height: 3px;
+      background: #7eb8e8;
+      border-radius: 2px;
+    }
+
+    .sidebar-tag {
+      display: inline-block;
+      font-size: 9.5px;
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.82);
+      border-radius: 3px;
+      padding: 2px 7px;
+      margin: 2px 2px 2px 0;
+    }
+
+    .sidebar-lang {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10.5px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 5px;
+    }
+    .lang-level {
+      font-size: 9px;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ======= MAIN CONTENT ======= */
+    .main {
+      flex: 1;
+      padding: 28px 26px;
+    }
+
+    .main-name {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1e3a5f;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    .main-role {
+      font-size: 12px;
+      color: #5a7fa8;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .main-divider {
+      height: 3px;
+      background: linear-gradient(to right, #1e3a5f, #7eb8e8, transparent);
+      border-radius: 2px;
+      margin: 10px 0 18px;
+    }
+
+    .section { margin-bottom: 16px; }
+
+    .section-title {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #1e3a5f;
+      border-bottom: 1.5px solid #1e3a5f;
+      padding-bottom: 3px;
+      margin-bottom: 10px;
+    }
+
+    /* Profil */
+    .profile-text {
+      font-size: 11px;
+      color: #444;
+      line-height: 1.65;
+    }
+
+    /* Pendidikan */
+    .edu-entry {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      align-items: flex-start;
+    }
+    .edu-main {}
+    .edu-school { font-size: 12px; font-weight: 700; color: #1a1a1a; }
+    .edu-major { font-size: 10.5px; color: #555; margin-top: 1px; }
+    .edu-note { font-size: 10px; color: #777; margin-top: 2px; font-style: italic; }
+    .edu-year {
+      font-size: 10px;
+      color: #5a7fa8;
+      font-weight: 600;
+      white-space: nowrap;
+      margin-left: 8px;
+      margin-top: 2px;
+    }
+
+    /* Pengalaman / Proyek */
+    .proj-entry { margin-bottom: 10px; }
+    .proj-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .proj-name { font-size: 11.5px; font-weight: 700; color: #1a1a1a; }
+    .proj-status {
+      font-size: 9px;
+      color: #fff;
+      background: #5a7fa8;
+      border-radius: 3px;
+      padding: 1px 6px;
+      white-space: nowrap;
+    }
+    .proj-tech { font-size: 9.5px; color: #777; margin-top: 1px; }
+    .proj-desc { font-size: 10.5px; color: #555; margin-top: 3px; line-height: 1.55; }
+
+    /* Sertifikat */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 16px;
+    }
+    .cert-entry {}
+    .cert-name { font-size: 11px; font-weight: 600; color: #1a1a1a; }
+    .cert-issuer { font-size: 10px; color: #777; }
+
+    /* Organisasi */
+    .org-entry { margin-bottom: 6px; }
+    .org-name { font-size: 11.5px; font-weight: 700; color: #1a1a1a; }
+    .org-role { font-size: 10.5px; color: #555; }
+    .org-period { font-size: 10px; color: #5a7fa8; font-weight: 500; }
+  </style>
+</head>
+<body>
+
+<div class="print-bar">
+  <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+  <p class="print-hint">Pilih "Save as PDF" → Margin: None → Centang "Background graphics" → Klik Save</p>
+</div>
+
+<div class="cv-wrapper">
+  <div class="cv-body">
+
+    <!-- ====== SIDEBAR ====== -->
+    <aside class="sidebar">
+
+      <!-- Foto -->
+      <div class="photo-box">
+        <!-- Untuk pasang foto:
+             Ganti tulisan di bawah dengan:
+             <img src="/foto-jeremy.jpg" alt="Foto Jeremy">
+             Lalu letakkan foto di folder public/ -->
+        Foto<br>Formal
+      </div>
+
+      <div class="sidebar-name">Jeremy Darrell Andreas</div>
+      <div class="sidebar-role">Junior Web & Mobile Dev<br>PKL Intern Candidate</div>
+
+      <!-- Kontak -->
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Kontak</div>
+        <div class="contact-item">
+          <span class="contact-icon">📱</span>
+          <div>
+            <span class="contact-label">Telepon / WA</span>
+            0817-669-5922
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <div>
+            <span class="contact-label">Email</span>
+            jeremydarrell@gmail.com
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🌐</span>
+          <div>
+            <span class="contact-label">Portfolio</span>
+            jeremydarrell.vercel.app
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">💻</span>
+          <div>
+            <span class="contact-label">GitHub</span>
+            github.com/JexyDev
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div>
+            <span class="contact-label">Lokasi</span>
+            Bogor, Jawa Barat
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Skills -->
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Technical Skills</div>
+
+        <div class="skill-item">
+          <div class="skill-name">React.js / Vite <span class="skill-pct">60%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:60%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">Laravel / PHP <span class="skill-pct">70%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:70%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">Flutter / Dart <span class="skill-pct">40%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:40%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">Node.js / Express <span class="skill-pct">30%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:30%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">MySQL / PostgreSQL <span class="skill-pct">60%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:60%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">IoT (Arduino/ESP32) <span class="skill-pct">50%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:50%"></div></div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Tools</div>
+        <span class="sidebar-tag">Git & GitHub</span>
+        <span class="sidebar-tag">VS Code</span>
+        <span class="sidebar-tag">Figma</span>
+        <span class="sidebar-tag">Postman</span>
+        <span class="sidebar-tag">Canva</span>
+      </div>
+
+      <!-- Bahasa -->
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Bahasa</div>
+        <div class="sidebar-lang">
+          <span>Bahasa Indonesia</span>
+          <span class="lang-level">Native</span>
+        </div>
+        <div class="sidebar-lang">
+          <span>Bahasa Inggris</span>
+          <span class="lang-level">Conversational (Bisa ngobrol)</span>
+        </div>
+      </div>
+
+      <!-- Hobi -->
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Minat & Hobi</div>
+        <span class="sidebar-tag">Musik</span>
+        <span class="sidebar-tag">Olahraga</span>
+        <span class="sidebar-tag">Coding</span>
+        <span class="sidebar-tag">Desain UI</span>
+      </div>
+
+    </aside>
+
+    <!-- ====== MAIN ====== -->
+    <main class="main">
+
+      <div class="main-name">Jeremy Darrell Andreas</div>
+      <div class="main-role">Junior Web & Mobile Developer — Calon Peserta PKL</div>
+      <div class="main-divider"></div>
+
+      <!-- Profil -->
+      <div class="section">
+        <div class="section-title">Profil Singkat</div>
+        <p class="profile-text">
+          Siswa kelas XII PPLG di SMK Wikrama Bogor yang memiliki ketertarikan kuat di bidang pengembangan web dan mobile. Terbiasa membangun proyek secara mandiri mulai dari konsep hingga implementasi. Menjunjung tinggi kejujuran dalam bekerja dan terus berupaya meningkatkan kemampuan setiap hari. Siap berkontribusi sebagai peserta PKL di lingkungan industri profesional, khususnya di wilayah Jabodetabek.
+        </p>
+      </div>
+
+      <!-- Pendidikan -->
+      <div class="section">
+        <div class="section-title">Riwayat Pendidikan</div>
+
+        <!-- SMK -->
+        <div class="edu-entry">
+          <div class="edu-main">
+            <div class="edu-school">SMK Wikrama Bogor</div>
+            <div class="edu-major">Pengembangan Perangkat Lunak dan Gim (PPLG)</div>
+            <div class="edu-note">Ekskul IoT Club · Mempelajari web, mobile, database & project management</div>
+          </div>
+          <div class="edu-year">2022 – 2025</div>
+        </div>
+
+        <!-- SMP -->
+        <div class="edu-entry">
+          <div class="edu-main">
+            <div class="edu-school">SMP Mardi Yuana</div>
+            <div class="edu-major">Bogor, Jawa Barat</div>
+          </div>
+          <div class="edu-year">2022 – 2024</div>
+        </div>
+
+        <!-- SD -->
+        <div class="edu-entry">
+          <div class="edu-main">
+            <div class="edu-school">SD Mardi Yuana</div>
+            <div class="edu-major">Bogor, Jawa Barat</div>
+          </div>
+          <div class="edu-year">2017 – 2022</div>
+        </div>
+      </div>
+
+      <!-- Proyek -->
+      <div class="section">
+        <div class="section-title">Proyek yang Dikerjakan</div>
+
+        <div class="proj-entry">
+          <div class="proj-header">
+            <span class="proj-name">TOLO — Marketplace UMKM Bogor</span>
+            <span class="proj-status">In Development</span>
+          </div>
+          <div class="proj-tech">Flutter · Express.js · MySQL · OpenAI API</div>
+          <div class="proj-desc">Platform jual beli online untuk UMKM lokal, dilengkapi fitur AI Assistant untuk membantu pembeli menemukan produk yang sesuai kebutuhan.</div>
+        </div>
+
+        <div class="proj-entry">
+          <div class="proj-header">
+            <span class="proj-name">Trainify — Home Workout App</span>
+            <span class="proj-status">Selesai</span>
+          </div>
+          <div class="proj-tech">PHP · Laravel · MySQL · Figma</div>
+          <div class="proj-desc">Aplikasi panduan workout interaktif di rumah. Desain dibuat di Figma dan diimplementasikan menggunakan Laravel.</div>
+        </div>
+
+        <div class="proj-entry">
+          <div class="proj-header">
+            <span class="proj-name">TixID — Cinema Ticketing System</span>
+            <span class="proj-status">Selesai</span>
+          </div>
+          <div class="proj-tech">PHP · Laravel · MySQL · Bootstrap</div>
+          <div class="proj-desc">Sistem pemesanan tiket bioskop untuk memperdalam konsep CRUD, MVC, dan manajemen database relasional.</div>
+        </div>
+
+        <div class="proj-entry">
+          <div class="proj-header">
+            <span class="proj-name">Carbon — Air Quality Monitor</span>
+            <span class="proj-status">Live</span>
+          </div>
+          <div class="proj-tech">React.js · Fetch API · Open Source API</div>
+          <div class="proj-desc">Aplikasi web real-time untuk memantau kualitas udara menggunakan API publik, sebagai eksplorasi pengintegrasian data eksternal ke dalam React.</div>
+        </div>
+      </div>
+
+      <!-- Sertifikasi -->
+      <div class="section">
+        <div class="section-title">Sertifikasi</div>
+        <div class="cert-grid">
+          <div class="cert-entry">
+            <div class="cert-name">JavaScript Fundamental</div>
+            <div class="cert-issuer">Dicoding Indonesia · 2025</div>
+          </div>
+          <div class="cert-entry">
+            <div class="cert-name">Python Fundamental</div>
+            <div class="cert-issuer">Dicoding Indonesia · 2026</div>
+          </div>
+          <div class="cert-entry">
+            <div class="cert-name">HTML Basic</div>
+            <div class="cert-issuer">SoloLearn · 2024</div>
+          </div>
+          <div class="cert-entry">
+            <div class="cert-name">K3 Keselamatan Kerja</div>
+            <div class="cert-issuer">SMK Wikrama Bogor · 2024</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Organisasi -->
+      <div class="section">
+        <div class="section-title">Organisasi & Kegiatan</div>
+        <div class="org-entry">
+          <span class="org-name">Ekskul Volly & Seni Budaya (Perkusi)</span> ·
+          <span class="org-role">Anggota Aktif</span>
+        </div>
+        <div class="org-entry">
+          <span class="org-name">IoT Club (Ekskul Produksi) — SMK Wikrama Bogor</span> ·
+          <span class="org-role">Anggota Aktif</span> ·
+          <span class="org-period">2023 – 2024</span>
+        </div>
+      </div>
+
+    </main>
+
+  </div><!-- .cv-body -->
+</div><!-- .cv-wrapper -->
+
+</body>
+</html>

@@ -7,9 +7,11 @@ import { Separator } from '../components/ui/separator';
 
 export default function ModernAbout() {
   const skills = [
-    { category: 'Frontend', items: ['React.js', 'Vite', 'Tailwind CSS', 'Framer Motion'], level: 75 },
-    { category: 'Backend', items: ['Node.js', 'Express.js', 'PHP Native', 'REST API'], level: 65 },
-    { category: 'Mobile', items: ['Flutter', 'Dart'], level: 60 },
+    { category: 'Frontend', items: ['React.js', 'Vite', 'Tailwind CSS', 'Framer Motion'], level: 60 },
+    { category: 'Backend', items: ['Node.js', 'Express.js', 'PHP Native', 'REST API'], level: 30 },
+    { category: 'Mobile', items: ['Flutter', 'Dart'], level: 40 },
+    { category: 'Frameworks', items: ['Laravel', 'Bootstrap'], level: 70 },
+    { category: 'IoT & Hardware', items: ['Arduino', 'ESP32', 'Sensors', 'C++'], level: 50 },
     { category: 'Tools', items: ['Git', 'VS Code', 'Figma', 'Postman'], level: 80 }
   ];
 
@@ -147,67 +149,84 @@ export default function ModernAbout() {
 
           {/* Education Tab */}
           <TabsContent value="education">
-            <Card className="border-none shadow-sm bg-muted/20">
-              <CardContent className="p-10">
-                <div className="flex flex-col md:flex-row gap-8 items-start">
-                  <div className="w-20 h-20 bg-foreground rounded-2xl flex items-center justify-center shrink-0">
-                    <GraduationCap className="w-10 h-10 text-background" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-3xl font-bold mb-2 tracking-tight">SMK WIKRAMA BOGOR</h3>
-                    <p className="text-xl text-muted-foreground mb-4">Pengembangan Perangkat Lunak dan Gim (PPLG)</p>
-                    <Badge className="mb-6">2022 - 2025 (Expected)</Badge>
-
-                    <Separator className="mb-8" />
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                      <div>
-                        <h4 className="font-bold mb-4 flex items-center gap-2">
-                          <BookOpen className="w-5 h-5" />
-                          What I Learn
-                        </h4>
-                        <ul className="space-y-4 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
-                          {[
-                            'JavaScript Dasar',
-                            'Github & Command Prompt',
-                            'Logika, Algoritma, OOP',
-                            'MYSQL & Databases',
-                            'MVC + PDO (PHP)',
-                            'Framework Laravel',
-                            'Perkenalan API',
-                            'Postman',
-                            'Lumen & PostgreSQL (API)',
-                            'Dasar ReactJS',
-                            'Fake Store App (React)',
-                            'Flutter Development',
-                            'IOT Fundamental',
-                            'Product/Project Management'
-                          ].map((item, i) => (
-                            <li key={i} className="flex items-center gap-3">
-                              <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                              <span className="text-muted-foreground">
-                                {item}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-bold mb-4 flex items-center gap-2">
-                          <Heart className="w-5 h-5" />
-                          Values
-                        </h4>
-                        <div className="bg-background/50 p-6 rounded-2xl">
-                          <p className="text-sm text-muted-foreground leading-relaxed">
-                            Di Wikrama, kami diajarkan moto <strong>"Ilmu yang Amaliah, Amal yang Ilmiah, Akhlakul Karimah"</strong>. Artinya, ilmu yang didapat harus dipraktikkan, setiap tindakan harus didasari ilmu, dan yang terpenting adalah memiliki karakter yang baik.
-                          </p>
+            <div className="space-y-6">
+              {/* SMK */}
+              <Card className="border-none shadow-sm bg-muted/20">
+                <CardContent className="p-10">
+                  <div className="flex flex-col md:flex-row gap-8 items-start">
+                    <div className="w-20 h-20 bg-foreground rounded-2xl flex items-center justify-center shrink-0">
+                      <GraduationCap className="w-10 h-10 text-background" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-3xl font-bold mb-2 tracking-tight">SMK WIKRAMA BOGOR</h3>
+                      <p className="text-xl text-muted-foreground mb-4">Pengembangan Perangkat Lunak dan Gim (PPLG)</p>
+                      <Badge className="mb-6">2022 - 2025 (Expected)</Badge>
+                      <Separator className="mb-8" />
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div>
+                          <h4 className="font-bold mb-4 flex items-center gap-2">
+                            <BookOpen className="w-5 h-5" />
+                            What I Learn
+                          </h4>
+                          <ul className="space-y-4 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                            {[
+                              'JavaScript Dasar',
+                              'Github & Command Prompt',
+                              'Logika, Algoritma, OOP',
+                              'MYSQL & Databases',
+                              'MVC + PDO (PHP)',
+                              'Framework Laravel',
+                              'Perkenalan API',
+                              'Postman',
+                              'Lumen & PostgreSQL (API)',
+                              'Dasar ReactJS',
+                              'Fake Store App (React)',
+                              'Flutter Development',
+                              'IOT Fundamental',
+                              'Product/Project Management'
+                            ].map((item, i) => (
+                              <li key={i} className="flex items-center gap-3">
+                                <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                                <span className="text-muted-foreground">{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-bold mb-4 flex items-center gap-2">
+                            <Heart className="w-5 h-5" />
+                            Values
+                          </h4>
+                          <div className="bg-background/50 p-6 rounded-2xl">
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                              Di Wikrama, kami diajarkan moto <strong>"Ilmu yang Amaliah, Amal yang Ilmiah, Akhlakul Karimah"</strong>. Artinya, ilmu yang didapat harus dipraktikkan, setiap tindakan harus didasari ilmu, dan yang terpenting adalah memiliki karakter yang baik.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+
+              {/* SMP & SD */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card className="border-none shadow-sm bg-muted/20">
+                  <CardContent className="p-8">
+                    <h3 className="text-xl font-bold mb-1">SMP Mardi Yuana</h3>
+                    <p className="text-muted-foreground mb-4">2022 - 2024</p>
+                    <p className="text-sm text-muted-foreground italic">Fokus pada pengembangan karakter dan dasar akademis.</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-none shadow-sm bg-muted/20">
+                  <CardContent className="p-8">
+                    <h3 className="text-xl font-bold mb-1">SD Mardi Yuana</h3>
+                    <p className="text-muted-foreground mb-4">2017 - 2022</p>
+                    <p className="text-sm text-muted-foreground italic">Awal mula ketertarikan pada teknologi dan kreativitas.</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
           </TabsContent>
         </Tabs>
       </motion.div>

@@ -25,7 +25,7 @@ export default function ModernContact() {
     try {
       // NOTE: Replace 'mqakpgyq' with your actual Formspree ID if you have one
       // or use your email directly if the Formspree account is set up for it.
-      const response = await fetch('https://formspree.io/f/mqakpgyq', {
+      const response = await fetch('https://formspree.io/f/mykoldal', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -110,6 +110,7 @@ export default function ModernContact() {
                       <Label htmlFor="name">Name *</Label>
                       <Input
                         id="name"
+                        name="name"
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -120,6 +121,7 @@ export default function ModernContact() {
                       <Label htmlFor="email">Email *</Label>
                       <Input
                         id="email"
+                        name="email"
                         type="email"
                         required
                         value={formData.email}
@@ -133,6 +135,7 @@ export default function ModernContact() {
                     <Label htmlFor="subject">Subject *</Label>
                     <Input
                       id="subject"
+                      name="subject"
                       required
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -144,6 +147,7 @@ export default function ModernContact() {
                     <Label htmlFor="message">Message *</Label>
                     <Textarea
                       id="message"
+                      name="message"
                       required
                       rows={6}
                       value={formData.message}
