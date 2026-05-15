@@ -7,12 +7,12 @@ import { Separator } from '../components/ui/separator';
 
 export default function ModernAbout() {
   const skills = [
-    { category: 'Frontend', items: ['React.js', 'Vite', 'Tailwind CSS', 'Framer Motion'], level: 60 },
-    { category: 'Backend', items: ['Node.js', 'Express.js', 'PHP Native', 'REST API'], level: 30 },
-    { category: 'Mobile', items: ['Flutter', 'Dart'], level: 40 },
-    { category: 'Frameworks', items: ['Laravel', 'Bootstrap'], level: 70 },
-    { category: 'IoT & Hardware', items: ['Arduino', 'ESP32', 'Sensors', 'C++'], level: 50 },
-    { category: 'Tools', items: ['Git', 'VS Code', 'Figma', 'Postman'], level: 80 }
+    { category: 'Frontend', items: ['React.js', 'Vite', 'Tailwind CSS', 'Framer Motion'] },
+    { category: 'Backend', items: ['Node.js', 'Express.js', 'PHP Native', 'REST API'] },
+    { category: 'Mobile', items: ['Flutter', 'Dart'] },
+    { category: 'Frameworks', items: ['Laravel', 'Bootstrap'] },
+    { category: 'IoT & Hardware', items: ['Arduino', 'ESP32', 'Sensors', 'C++'] },
+    { category: 'Tools', items: ['Git', 'VS Code', 'Wokwi IoT', 'Figma', 'Postman'] }
   ];
 
   const milestones = [
@@ -93,6 +93,10 @@ export default function ModernAbout() {
                         Di era sekarang, saya juga memanfaatkan <strong className="text-foreground">AI sebagai asisten belajar dan coding</strong>. Bagi saya, AI adalah partner diskusi yang luar biasa untuk mempercepat pemahaman, namun tetap dengan prinsip bahwa saya harus memahami setiap baris logika yang dihasilkan.
                       </p>
 
+                      <p className="text-muted-foreground leading-relaxed mb-6">
+                        Bagi saya, coding bukan cuma soal teknis. Saya sangat menyukai apa yang namanya <strong className="text-foreground">proses</strong> — bagaimana sesuatu yang berantakan perlahan menjadi teratur, dan bagaimana setiap kegagalan (error) sebenarnya adalah bagian dari pertumbuhan hidup yang jujur.
+                      </p>
+
                       <p className="text-muted-foreground leading-relaxed">
                         Saat ini saya fokus mendalami pengembangan web dan mobile, sambil tetap memegang prinsip kejujuran dalam setiap baris kode yang saya tulis.
                       </p>
@@ -127,7 +131,6 @@ export default function ModernAbout() {
                   <CardHeader>
                     <CardTitle className="text-lg flex justify-between items-center">
                       {skill.category}
-                      <span className="text-xs font-mono text-muted-foreground">{skill.level}% Confidence</span>
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -142,9 +145,7 @@ export default function ModernAbout() {
                 </Card>
               ))}
             </div>
-            <p className="mt-8 text-center text-muted-foreground text-sm italic">
-              *Tingkat kepercayaan diri berdasarkan pemahaman konsep dan implementasi dalam proyek nyata.
-            </p>
+
           </TabsContent>
 
           {/* Education Tab */}

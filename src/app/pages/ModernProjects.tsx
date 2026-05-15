@@ -51,7 +51,7 @@ export default function ModernProjects() {
       description: 'Dashboard monitoring untuk perangkat IoT yang memantau suhu dan kelembaban secara real-time.',
       reflection: 'Ini adalah proyek IoT pertama saya dari ekskul IoT. Membuat rangkaian sensor untuk praktek secara langsung sangat seru dan menantang bagi saya.',
       image: '/projects/iot.jpeg',
-      tags: ['IoT', 'C++'],
+      tags: ['IoT', 'C++', 'Wokwi'],
       featured: false,
       year: '2024',
       status: 'Completed',
