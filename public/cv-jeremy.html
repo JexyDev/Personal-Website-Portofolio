@@ -13,9 +13,9 @@
 
     body {
       font-family: 'Inter', Arial, sans-serif;
-      color: #222;
-      background: #e8e8e8;
-      line-height: 1.5;
+      color: #374151;
+      background: #f3f4f6;
+      line-height: 1.6;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
@@ -52,11 +52,13 @@
     .cv-wrapper {
       width: 210mm;
       min-height: 297mm;
-      margin: 24px auto;
+      margin: 40px auto;
       background: #fff;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.13);
+      box-shadow: 0 10px 50px rgba(0,0,0,0.08);
       display: flex;
       flex-direction: column;
+      border-radius: 8px;
+      overflow: hidden;
     }
 
     /* ======= LEFT SIDEBAR ======= */
@@ -66,123 +68,112 @@
     }
 
     .sidebar {
-      width: 68mm;
-      background: #1e3a5f;
-      color: #fff;
-      padding: 28px 20px;
+      width: 72mm;
+      background: #f9fafb;
+      color: #374151;
+      padding: 32px 24px;
       flex-shrink: 0;
+      border-right: 1px solid #e5e7eb;
     }
 
     /* Photo */
     .photo-box {
-      width: 88px;
-      height: 88px;
-      border-radius: 50%;
-      background: #fff2;
-      border: 3px solid rgba(255,255,255,0.35);
-      margin: 0 auto 14px;
+      width: 110px;
+      height: 110px;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      margin: 0 auto 20px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
-      color: rgba(255,255,255,0.5);
-      text-align: center;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
     .photo-box img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
     }
 
     .sidebar-name {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
       text-align: center;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
+      color: #111827;
     }
     .sidebar-role {
-      font-size: 10px;
+      font-size: 11px;
       text-align: center;
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 18px;
-      font-weight: 400;
+      color: #6b7280;
+      margin-bottom: 24px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .sidebar-section {
-      margin-bottom: 18px;
+      margin-bottom: 24px;
     }
     .sidebar-section-title {
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: rgba(255,255,255,0.5);
-      border-bottom: 1px solid rgba(255,255,255,0.15);
-      padding-bottom: 4px;
-      margin-bottom: 10px;
+      letter-spacing: 1.2px;
+      color: #1e3a5f;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
     }
 
     .contact-item {
-      font-size: 10.5px;
-      color: rgba(255,255,255,0.88);
-      margin-bottom: 6px;
+      font-size: 11px;
+      color: #4b5563;
+      margin-bottom: 10px;
       display: flex;
-      align-items: flex-start;
-      gap: 6px;
+      align-items: center;
+      gap: 10px;
     }
     .contact-label {
       font-size: 9px;
-      color: rgba(255,255,255,0.45);
+      color: #9ca3af;
       display: block;
+      text-transform: uppercase;
+      font-weight: 600;
     }
     .contact-icon {
-      font-size: 12px;
-      margin-top: 1px;
+      font-size: 14px;
       flex-shrink: 0;
+      color: #1e3a5f;
     }
 
     .skill-item {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
     .skill-name {
-      font-size: 10.5px;
-      color: rgba(255,255,255,0.88);
-      margin-bottom: 3px;
-      display: flex;
-      justify-content: space-between;
+      font-size: 11px;
+      color: #4b5563;
+      display: block;
     }
-    .skill-pct {
-      font-size: 9px;
-      color: rgba(255,255,255,0.5);
-    }
-    .skill-bar-bg {
-      height: 3px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 2px;
-    }
-    .skill-bar-fill {
-      height: 3px;
-      background: #7eb8e8;
-      border-radius: 2px;
-    }
-
     .sidebar-tag {
       display: inline-block;
-      font-size: 9.5px;
-      background: rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.82);
-      border-radius: 3px;
-      padding: 2px 7px;
-      margin: 2px 2px 2px 0;
+      font-size: 10px;
+      background: #e5e7eb;
+      color: #374151;
+      border-radius: 6px;
+      padding: 4px 10px;
+      margin: 0 4px 6px 0;
+      font-weight: 500;
     }
-
     .sidebar-lang {
       display: flex;
       justify-content: space-between;
-      font-size: 10.5px;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 5px;
+      font-size: 11px;
+      color: #4b5563;
+      margin-bottom: 6px;
     }
     .lang-level {
       font-size: 9px;
@@ -192,47 +183,51 @@
     /* ======= MAIN CONTENT ======= */
     .main {
       flex: 1;
-      padding: 28px 26px;
+      padding: 40px 32px;
     }
 
     .main-name {
-      font-size: 24px;
-      font-weight: 700;
+      font-size: 28px;
+      font-weight: 800;
       color: #1e3a5f;
-      letter-spacing: -0.5px;
-      line-height: 1.2;
-    }
-    .main-role {
-      font-size: 12px;
-      color: #5a7fa8;
-      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
       margin-bottom: 4px;
     }
+    .main-role {
+      font-size: 14px;
+      color: #64748b;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
     .main-divider {
-      height: 3px;
-      background: linear-gradient(to right, #1e3a5f, #7eb8e8, transparent);
+      height: 4px;
+      background: #1e3a5f;
+      width: 60px;
       border-radius: 2px;
-      margin: 10px 0 18px;
+      margin: 16px 0 24px;
     }
 
-    .section { margin-bottom: 16px; }
+    .section { margin-bottom: 24px; }
 
     .section-title {
-      font-size: 10px;
-      font-weight: 700;
+      font-size: 11px;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 0.1em;
       color: #1e3a5f;
-      border-bottom: 1.5px solid #1e3a5f;
-      padding-bottom: 3px;
-      margin-bottom: 10px;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
     }
 
     /* Profil */
     .profile-text {
-      font-size: 11px;
-      color: #444;
-      line-height: 1.65;
+      font-size: 12.5px;
+      color: #4b5563;
+      line-height: 1.7;
     }
 
     /* Pendidikan */
@@ -243,16 +238,19 @@
       align-items: flex-start;
     }
     .edu-main {}
-    .edu-school { font-size: 12px; font-weight: 700; color: #1a1a1a; }
-    .edu-major { font-size: 10.5px; color: #555; margin-top: 1px; }
-    .edu-note { font-size: 10px; color: #777; margin-top: 2px; font-style: italic; }
+    .edu-school { font-size: 13px; font-weight: 700; color: #111827; }
+    .edu-major { font-size: 11.5px; color: #4b5563; margin-top: 2px; }
+    .edu-note { font-size: 11px; color: #6b7280; margin-top: 4px; font-style: italic; }
     .edu-year {
-      font-size: 10px;
-      color: #5a7fa8;
-      font-weight: 600;
+      font-size: 11px;
+      color: #1e3a5f;
+      font-weight: 700;
       white-space: nowrap;
-      margin-left: 8px;
+      margin-left: 12px;
       margin-top: 2px;
+      background: #f1f5f9;
+      padding: 2px 8px;
+      border-radius: 4px;
     }
 
     /* Pengalaman / Proyek */
@@ -262,17 +260,18 @@
       justify-content: space-between;
       align-items: baseline;
     }
-    .proj-name { font-size: 11.5px; font-weight: 700; color: #1a1a1a; }
+    .proj-name { font-size: 13px; font-weight: 700; color: #111827; }
     .proj-status {
       font-size: 9px;
-      color: #fff;
-      background: #5a7fa8;
-      border-radius: 3px;
-      padding: 1px 6px;
-      white-space: nowrap;
+      color: #1e3a5f;
+      background: #e0e7ff;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-weight: 700;
+      text-transform: uppercase;
     }
-    .proj-tech { font-size: 9.5px; color: #777; margin-top: 1px; }
-    .proj-desc { font-size: 10.5px; color: #555; margin-top: 3px; line-height: 1.55; }
+    .proj-tech { font-size: 10.5px; color: #64748b; margin-top: 2px; font-weight: 500; }
+    .proj-desc { font-size: 11.5px; color: #4b5563; margin-top: 6px; line-height: 1.6; }
 
     /* Sertifikat */
     .cert-grid {
