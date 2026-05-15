@@ -6,6 +6,7 @@
   <title>Curriculum Vitae - Jeremy Darrell Andreas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -293,8 +294,8 @@
 <body>
 
 <div class="print-bar">
-  <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
-  <p class="print-hint">Pilih "Save as PDF" → Margin: None → Centang "Background graphics" → Klik Save</p>
+  <button class="print-btn" onclick="downloadCV()">📥 Download PDF</button>
+  <p class="print-hint">File PDF akan dibuat dan diunduh secara otomatis.</p>
 </div>
 
 <div class="cv-wrapper">
@@ -556,7 +557,23 @@
     </main>
 
   </div><!-- .cv-body -->
-</div><!-- .cv-wrapper -->
+  </div><!-- .cv-wrapper -->
+
+  <script>
+    function downloadCV() {
+      const element = document.querySelector('.cv-wrapper');
+      const opt = {
+        margin: 0,
+        filename: 'CV_Jeremy_Darrell.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, logging: false },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+
+      // New Promise-based usage:
+      html2pdf().set(opt).from(element).save();
+    }
+  </script>
 
 </body>
 </html>
